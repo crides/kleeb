@@ -1,10 +1,10 @@
 # PG1350 Kicad symbols & footprints
 
-PG1350 symbols and footprints heavily inspired by @PJE66. 
+PG1350 symbols and footprints heavily inspired by [@PJE66](https://github.com/PJE66). 
 
 ## Symbol
 
-Includes the diode in the symbols. Directly taken from @PJE66. A switch without diode can be just represented with a normal push button.
+Includes the diode in the symbols. Directly taken from [@PJE66](https://github.com/PJE66). A switch without diode can be just represented with a normal push button.
 
 ## Footprints
 
