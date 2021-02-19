@@ -1,4 +1,4 @@
-(module PG1350-reversible-no-diode (layer F.Cu) (tedit 602FF53C)
+(module PG1350-reversible-no-diode (layer F.Cu) (tedit 60300322)
   (attr smd)
   (fp_text reference REF** (at -6.7 -5.8) (layer F.SilkS) hide
     (effects (font (size 1 1) (thickness 0.15)) (justify left))
@@ -6,7 +6,6 @@
   (fp_text value 1N4148W (at 0 -3.5) (layer F.Fab)
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (fp_line (start 5 -3.8) (end -5 -3.8) (layer B.Cu) (width 0.254))
   (fp_line (start -6.5 7.5) (end 6.5 7.5) (layer Cmts.User) (width 0.12))
   (fp_line (start -7.5 -6.5) (end -7.5 6.5) (layer Cmts.User) (width 0.12))
   (fp_line (start 6.5 -7.5) (end -6.5 -7.5) (layer Cmts.User) (width 0.12))
@@ -34,6 +33,7 @@
   (pad "" np_thru_hole circle (at 5.5 0) (size 1.7 1.7) (drill 1.7) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 0 0) (size 3.4 3.4) (drill 3.4) (layers *.Cu *.Mask))
   (pad 2 thru_hole circle (at -5 -3.8 221.9) (size 2 2) (drill 1.2) (layers *.Cu F.Mask))
+  (pad 2 smd roundrect (at 0 -3.8) (size 10 0.254) (layers B.Cu) (roundrect_rratio 0.5))
   (model ${KISYS3DMOD}/Diode_SMD.3dshapes/D_SOD-123F.wrl
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
