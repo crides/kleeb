@@ -52,8 +52,8 @@
   (pad 1 thru_hole circle (at 0 -10.4) (size 2 2) (drill 1.2) (layers *.Cu *.Mask))
   (pad 4 thru_hole rect (at 1.65 0) (size 0.9 1.2) (drill 0.4) (layers *.Cu *.Mask))
   (pad 3 thru_hole rect (at -1.65 0) (size 0.9 1.2) (drill 0.4) (layers *.Cu *.Mask))
-  (pad "" np_thru_hole circle (at -5.5 -4.5) (size 1.9 1.9) (drill 1.9) (layers *.Cu *.Mask))
-  (pad "" np_thru_hole circle (at 5.5 -4.5) (size 1.9 1.9) (drill 1.9) (layers *.Cu *.Mask))
+  (pad "" np_thru_hole circle (at -5.5 -4.5) (size 1.7 1.7) (drill 1.7) (layers *.Cu *.Mask))
+  (pad "" np_thru_hole circle (at 5.5 -4.5) (size 1.7 1.7) (drill 1.7) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 0 -4.5) (size 3.4 3.4) (drill 3.4) (layers *.Cu *.Mask))
   (pad 2 thru_hole circle (at -5 -8.3 221.9) (size 2 2) (drill 1.2) (layers *.Cu F.Mask))
   (model ${KISYS3DMOD}/Diode_SMD.3dshapes/D_SOD-123F.wrl
