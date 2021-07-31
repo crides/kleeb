@@ -38,4 +38,9 @@
   (pad 7 thru_hole circle (at 5.08 17.018) (size 1.524 1.524) (drill 0.762) (layers *.Cu *.Mask))
   (pad 8 thru_hole circle (at 7.62 17.018) (size 1.524 1.524) (drill 0.762) (layers *.Cu *.Mask))
   (pad 9 thru_hole circle (at 10.16 17.018) (size 1.524 1.524) (drill 0.762) (layers *.Cu *.Mask))
+  (model "${KIPRJMOD}/keeb-libs/models/Adafruit_Sharp_Memory_Display_v4.step"
+    (offset (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )
