@@ -1,54 +1,6 @@
 #!/usr/bin/python3
 
-from KicadModTree import Footprint, Pad, Text, Line, KicadFileHandler, Arc, Polygon, RectLine
-import math
-
-LAYERS_BACK = Pad.LAYERS_CONNECT_BACK
-LAYERS_FRONT = Pad.LAYERS_CONNECT_FRONT
-LAYERS_THT = Pad.LAYERS_THT
-LAYERS_FTHT = ['*.Cu', 'F.Mask']
-LAYERS_BTHT = ['*.Cu', 'B.Mask']
-LAYERS_SMT_BOTH = ['*.Cu', '*.Mask', '*.Paste']
-
-def footprint(name: str, entities: list):
-    fp = Footprint(name)
-    fp.extend(entities)
-    KicadFileHandler(fp).writeFile(f"{name}.kicad_mod")
-
-def vecadd(a, b):
-    return (a[0] + b[0], a[1] + b[1])
-
-def rounded_rect(x: float, y: float, w: float, h: float, r: float, layer: str):
-    # start from top right
-    centers = [
-        (x + w/2 - r, y - h/2 + r),
-        (x + w/2 - r, y + h/2 - r),
-        (x - w/2 + r, y + h/2 - r),
-        (x - w/2 + r, y - h/2 + r),
-    ]
-    points = [
-        vecadd(centers[0], (0, -r)),
-        vecadd(centers[0], (r, 0)),
-        vecadd(centers[1], (r, 0)),
-        vecadd(centers[1], (0, r)),
-        vecadd(centers[2], (0, r)),
-        vecadd(centers[2], (-r, 0)),
-        vecadd(centers[3], (-r, 0)),
-        vecadd(centers[3], (0, -r)),
-    ]
-    entities = []
-    for i in range(4):
-        entities += [
-            Arc(start=points[i*2], end=points[i*2+1], center=centers[i], layer=layer),
-            Line(start=points[i*2-1], end=points[i*2], layer=layer),
-        ]
-    return entities
-
-def npth(x, y, r):
-    return Pad(type=Pad.TYPE_NPTH, shape=Pad.SHAPE_CIRCLE, at=(x, y), size=(r, r), drill=r, layers=Pad.LAYERS_THT)
-
-def pth(n, x, y, p, r, layers):
-    return Pad(number=n, type=Pad.TYPE_THT, shape=Pad.SHAPE_CIRCLE, at=(x, y), size=(p, p), drill=r, layers=layers)
+from lib import *
 
 pin_size = (2, 1.2)
 top_pos = lambda y: (0, y - 5.9)
@@ -67,18 +19,19 @@ core = lambda y: text(y) + rounded_rect(0, y, 15, 15, 1, 'Cmts.User') \
            RectLine(start=(2.5, y + 6.25), end=(-2.5, y + 3.15), layer='Dwgs.User')]
 
 cap_variants = lambda y: [
-    ("", (0, y, 17.5, 16.5)),
-    ("S", (0, y, 17.5, 14.5)),
-    ("SL", (-0.75, y, 16, 14.5)),
-    ("SR", (0.75, y, 16, 14.5)),
+    ("", (0, y, 18, 17)),
+    ("S", (0, y, 18, 15)),
+    ("SL", (-0.75, y, 16.5, 15)),
+    ("SR", (0.75, y, 16.5, 15)),
 ]
 
 trace_width = 0.254     # mm
 
-normal_pins = lambda y: [pth(1, *top_pos(y), *pin_size, LAYERS_BTHT), pth(2, *side_pos(y), *pin_size, LAYERS_BTHT)]
-rev_pins = lambda y: [pth(1, *top_pos(y), *pin_size, LAYERS_THT),
-                      pth(2, *side_pos(y), *pin_size, LAYERS_BTHT),
-                      pth(2, *side_pos_rev(y), *pin_size, LAYERS_FTHT)]
+normal_pins = lambda y, d: [pth(1, *top_pos(y), *pin_size, LAYERS_BTHT),
+                            pth((3 if d else 2), *side_pos(y), *pin_size, LAYERS_BTHT)]
+rev_pins = lambda y, d: [pth(1, *top_pos(y), *pin_size, LAYERS_THT),
+                         pth((3 if d else 2), *side_pos(y), *pin_size, LAYERS_BTHT),
+                         pth((3 if d else 2), *side_pos_rev(y), *pin_size, LAYERS_FTHT)]
 
 diode_off = -4.5
 def diode_pads(rev):
@@ -115,6 +68,6 @@ for diode in [False, True]:
         for cap, outline in cap_variants(off):
             var = ("D" if diode else "") + ("R" if rev else "") + cap
             name = "pg1350" + ("-" + var if var else var)
-            footprint(name, core(off) + (rev_pins if rev else normal_pins)(off)
-                            + rounded_rect(*outline, 1, 'Dwgs.User')
+            footprint("pg1350", name, core(off) + (rev_pins if rev else normal_pins)(off, diode)
+                            + cap_outline(outline)
                             + (diode_pads(rev) if diode else []))

@@ -1,0 +1,23 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# diode-choc
+#
+DEF diode-choc K 0 40 Y Y 1 F N
+F0 "K" 0 150 50 H V C CNN
+F1 "diode-choc" 0 -50 50 H V C CNN
+F2 "" 0 150 50 H I C CNN
+F3 "" 0 150 50 H I C CNN
+DRAW
+P 2 0 1 10 -100 50 100 50 N
+P 2 0 1 0 -50 -100 -50 -200 N
+P 2 0 1 10 0 100 0 50 N
+P 3 0 1 0 100 0 100 -150 50 -150 N
+P 4 0 1 0 50 -100 50 -200 -50 -150 50 -100 N
+X ~ 1 -200 0 100 R 50 50 1 1 B
+X ~ 2 -150 -150 100 R 50 50 1 1 I
+X ~ 3 100 0 100 L 50 50 1 1 B N
+ENDDRAW
+ENDDEF
+#
+#End Library
