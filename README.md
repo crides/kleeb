@@ -6,7 +6,7 @@ PG1350 & PG1232 symbols and footprints heavily inspired by [@PJE66](https://gith
 
 Includes the diode in the symbols. Taken from [@PJE66](https://github.com/PJE66), but with some of the pins hidden as they are not needed for external connections. Even though they are still 2 pin "components", the diode is included for clarity in the schematics. A switch without diode can be just represented with a normal push button.
 
-![symbol](https://i.imgur.com/xBtscyL.png)
+![symbol](pics/symbol.png)
 
 ## Footprints
  
