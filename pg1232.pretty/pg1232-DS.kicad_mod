@@ -1,4 +1,4 @@
-(module pg1232-DS (layer F.Cu) (tedit 6114A2D4)
+(module pg1232-DS (layer F.Cu) (tedit 6114B851)
   (fp_text reference REF** (at 0 0) (layer F.Fab) hide
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -59,4 +59,9 @@
     ))
   (pad 3 smd rect (at -1.65 0) (size 0.9 1.2) (layers F.Cu F.Mask F.Paste))
   (pad 2 smd rect (at 1.65 0) (size 0.9 1.2) (layers F.Cu F.Mask F.Paste))
+  (model /home/steven/gitproj/fusion/choc/models/pg1232.step
+    (at (xyz 0 -0.17126 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )

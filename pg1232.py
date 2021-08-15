@@ -42,11 +42,11 @@ core = lambda y: text(y) \
 cap_variants = lambda y: [
     ("", (0, y, 18, 17)),
     ("S", (0, y, 18, 15)),
-    ("SL", (-0.75, y, 16.5, 15)),
-    ("SR", (0.75, y, 16.5, 15)),
+    ("SL", (-0.875, y, 16.25, 15)),
+    ("SR", (0.875, y, 16.25, 15)),
     ("SS", (0, y, 18, 13.5)),
-    ("SSL", (-0.625, y, 16.25, 13.5)),
-    ("SSR", (0.625, y, 16.25, 13.5)),
+    ("SSL", (-0.875, y, 16.25, 13.5)),
+    ("SSR", (0.875, y, 16.25, 13.5)),
 ]
 
 trace_width = 0.254     # mm
@@ -95,4 +95,5 @@ for diode in [False, True]:
             name = "pg1232" + ("-" + var if var else var)
             footprint("pg1232", name, core(off) + pins(off, rev, diode)
                             + cap_outline(outline)
-                            + (diode_pads(rev) if diode else []))
+                            + (diode_pads(rev) if diode else [])
+                            + [Model(filename="/home/steven/gitproj/fusion/choc/models/pg1232.step", at=(0, -0.1712598425, 0))])
