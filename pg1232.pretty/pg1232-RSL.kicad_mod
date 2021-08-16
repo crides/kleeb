@@ -1,4 +1,4 @@
-(module pg1232-RSL (layer F.Cu) (tedit 6114B851)
+(module pg1232-RSL (layer F.Cu) (tedit 6119EE89)
   (fp_text reference REF** (at 0 0) (layer F.Fab) hide
     (effects (font (size 1 1) (thickness 0.15)))
   )
