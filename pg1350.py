@@ -15,6 +15,7 @@ text = lambda y: [
 ]
 
 core = lambda y: text(y) + rounded_rect(0, y, 15, 15, 1, 'Cmts.User') \
+        + rounded_rect(0, y, 13.8, 13.8, 1, 'Cmts.User') \
         + [npth(0, y, 3.4), npth(-5.5, y, 1.7), npth(5.5, y, 1.7),
            RectLine(start=(2.5, y + 6.25), end=(-2.5, y + 3.15), layer='Dwgs.User')]
 
