@@ -10,6 +10,7 @@ LAYERS_SMT_BOTH = ['*.Cu', '*.Mask', '*.Paste']
 
 def footprint(dir: str, name: str, entities: list):
     fp = Footprint(name)
+    fp.setAttribute("through_hole")
     fp.extend(entities)
     KicadFileHandler(fp).writeFile(f"{dir}.pretty/{name}.kicad_mod")
 

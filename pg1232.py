@@ -23,21 +23,17 @@ mid_hole_param = {
 core = lambda y: text(y) \
         + [RectLine(start=(6.75, y + 6.25), end=(-6.75, y - 6.25), layer='Cmts.User'),
            RectLine(start=(2.8, y - 3.25), end=(-2.8, y - 5.45), layer='Dwgs.User'),
-           Pad(at=(0, y), size=(11.85, 5.9), drill=(11.85, 5.9), **mid_hole_param),
-           Pad(at=(0, y + 3.5), size=(4.7, 1), drill=(4.7, 1), **mid_hole_param),
-           Pad(at=(-4.2, y), size=(1, 5.9), drill=(1, 5.9), **mid_hole_param),
-           Pad(at=(4.2, y), size=(1, 5.9), drill=(1, 5.9), **mid_hole_param),
-           Pad(at=(-5.36, y), size=(1, 5.9), drill=(1, 5.9), **mid_hole_param),
-           Pad(at=(5.36, y), size=(1, 5.9), drill=(1, 5.9), **mid_hole_param),
-           Pad(at=(-5.9, y), rotation=90, size=(6.1, 0.3), drill=(6.1, 0.3), **mid_hole_param),
-           Pad(at=(5.9, y), rotation=90, size=(6.1, 0.3), drill=(6.1, 0.3), **mid_hole_param),
-           Pad(at=(-4.59, y), size=(1, 5.9), drill=(1, 5.9), **mid_hole_param),
-           Pad(at=(4.59, y), size=(1, 5.9), drill=(1, 5.9), **mid_hole_param),
-           Pad(at=(0, y + 3.95), size=(4.7, 0.3), drill=(4.7, 0.3), **mid_hole_param),
-           Pad(at=(0, y - 2.9), size=(12.1, 0.3), drill=(12.1, 0.3), **mid_hole_param),
-           Pad(at=(0, y + 2.9), size=(12.1, 0.3), drill=(12.1, 0.3), **mid_hole_param),
-           Pad(at=(2.2, y + 3.5), rotation=90, size=(1.2, 0.3), drill=(1.2, 0.3), **mid_hole_param),
-           Pad(at=(-2.2, y + 3.5), rotation=90, size=(1.2, 0.3), drill=(1.2, 0.3), **mid_hole_param)]
+           Pad(at=(-5.7, y), rotation=90, size=(5.8, 0.3), drill=(5.8, 0.3), **mid_hole_param),
+           Pad(at=(4.85, y), size=(2, 5.8), drill=(2, 5.8), **mid_hole_param),
+           Pad(at=(0, y + 3.3), size=(4.5, 1), drill=(4.5, 1), **mid_hole_param),
+           Pad(at=(-4.85, y), size=(2, 5.8), drill=(2, 5.8), **mid_hole_param),
+           Pad(at=(0, y + 3.65), size=(4.5, 0.3), drill=(4.5, 0.3), **mid_hole_param),
+           Pad(at=(0, y + 2.75), size=(11.7, 0.3), drill=(11.7, 0.3), **mid_hole_param),
+           Pad(at=(2.1, y + 3.25), rotation=90, size=(1.1, 0.3), drill=(1.1, 0.3), **mid_hole_param),
+           Pad(at=(5.7, y), rotation=90, size=(5.8, 0.3), drill=(5.8, 0.3), **mid_hole_param),
+           Pad(at=(-2.1, y + 3.25), rotation=90, size=(1.1, 0.3), drill=(1.1, 0.3), **mid_hole_param),
+           Pad(at=(0, y + -2.75), size=(11.7, 0.3), drill=(11.7, 0.3), **mid_hole_param),
+           Pad(at=(0, y), size=(11.7, 5.8), drill=(11.7, 5.8), **mid_hole_param)]
 
 cap_variants = lambda y: [
     ("", (0, y, 18, 17)),
