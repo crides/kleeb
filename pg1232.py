@@ -63,7 +63,7 @@ def diode_pads(rev):
     left_pad = (-1.65, 0)
     pad_size = (0.9, 1.2)
     core = [
-        Pad(number=3, type=Pad.TYPE_SMT, shape=Pad.SHAPE_CUSTOM, at=left_pad, size=(0, 0),
+        Pad(number=3, type=Pad.TYPE_SMT, shape=Pad.SHAPE_CUSTOM, at=left_pad, size=(trace_width, trace_width),
             primitives=[Line(start=(-4.75, 7.63), end=(-2.93, 9.45), width=trace_width),
                         Line(start=(0, 0), end=(-1.3, 0), width=trace_width),
                         Line(start=(-1.3, 0), end=(-2.25, 0.95), width=trace_width),

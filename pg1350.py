@@ -40,7 +40,7 @@ def diode_pads(rev):
     layers = Pad.LAYERS_THT if rev else Pad.LAYERS_SMT
     drill = 0.4 if rev else 0
     core = [
-        Pad(number=3, type=Pad.TYPE_SMT, shape=Pad.SHAPE_CUSTOM, at=side_pos(diode_off), size=(0, 0),
+        Pad(number=3, type=Pad.TYPE_SMT, shape=Pad.SHAPE_CUSTOM, at=side_pos(diode_off), size=(trace_width, trace_width),
             primitives=[Line(start=(0, 0), end=(-2, 2), width=trace_width),
                         Line(start=(-2, 2), end=(-2, 6.95), width=trace_width),
                         Line(start=(-2, 6.95), end=(-3.35, 8.3), width=trace_width)],
