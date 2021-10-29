@@ -69,6 +69,6 @@ for diode in [False, True]:
         for cap, outline in cap_variants(off):
             var = ("D" if diode else "") + ("R" if rev else "") + cap
             name = "pg1350" + ("-" + var if var else var)
-            footprint("pg1350", name, core(off) + (rev_pins if rev else normal_pins)(off, diode)
+            footprint("pg1350", name, diode, core(off) + (rev_pins if rev else normal_pins)(off, diode)
                             + cap_outline(outline)
                             + (diode_pads(rev) if diode else []))

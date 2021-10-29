@@ -8,8 +8,10 @@ LAYERS_FTHT = ['*.Cu', 'F.Mask']
 LAYERS_BTHT = ['*.Cu', 'B.Mask']
 LAYERS_SMT_BOTH = ['*.Cu', '*.Mask', '*.Paste']
 
-def footprint(dir: str, name: str, entities: list):
+def footprint(dir: str, name: str, smd: bool, entities: list):
     fp = Footprint(name)
+    if smd:
+        fp.setAttribute("smd")
     fp.extend(entities)
     KicadFileHandler(fp).writeFile(f"{dir}.pretty/{name}.kicad_mod")
 

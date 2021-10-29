@@ -90,7 +90,7 @@ for diode in [False, True]:
         for cap, outline in cap_variants(off):
             var = ("D" if diode else "") + ("R" if rev else "") + cap
             name = "pg1232" + ("-" + var if var else var)
-            footprint("pg1232", name, core(off) + pins(off, rev, diode)
+            footprint("pg1232", name, diode, core(off) + pins(off, rev, diode)
                             + cap_outline(outline)
                             + (diode_pads(rev) if diode else [])
                             + [Model(filename="/home/steven/gitproj/fusion/choc/models/pg1232.step", at=(0, -0.1712598425, 0))])
