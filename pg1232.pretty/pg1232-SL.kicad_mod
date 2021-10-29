@@ -1,5 +1,4 @@
-(module pg1232-SL (layer F.Cu) (tedit 616C7B44)
-  (attr through_hole)
+(module pg1232-SL (layer F.Cu) (tedit 617C4227)
   (fp_text reference REF** (at 0 0) (layer F.Fab) hide
     (effects (font (size 1 1) (thickness 0.15)))
   )
