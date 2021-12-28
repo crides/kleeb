@@ -1,11 +1,11 @@
-(footprint "Holyiot-18010" (version 20210722) (generator pcbnew) (layer "F.Cu")
+(footprint "holyiot-18010" (version 20210722) (generator pcbnew) (layer "F.Cu")
   (tedit 61382EFA)
   (attr smd)
   (fp_text reference "REF**" (at 0 10.7) (layer "F.SilkS")
     (effects (font (size 1 1) (thickness 0.15)))
     (tstamp 81086290-e55f-459f-80ee-67e87b0ac7aa)
   )
-  (fp_text value "Holyiot_18010" (at 0 -10.25) (layer "F.Fab")
+  (fp_text value "holyiot-18010" (at 0 -10.25) (layer "F.Fab")
     (effects (font (size 1 1) (thickness 0.15)))
     (tstamp 16f418d0-36d7-4b7c-b71b-f1af636baeb2)
   )
@@ -78,7 +78,7 @@
   (pad "53" smd rect (at -3.3 9 90) (size 1.2 0.8) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp f38f7558-8b03-4a4d-b9d7-87a15d459ad3))
   (pad "54" smd rect (at -4.4 9 90) (size 1.2 0.8) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 3eaa5b5f-ac04-4ba0-979e-26a308b22731))
   (pad "55" smd rect (at -5.5 9 90) (size 1.2 0.8) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 6ff24df3-22fd-48e7-b272-2b25e58dcae4))
-  (model "${KIPRJMOD}/keeb-libs/models/Holyiot_18010_v2.step"
+  (model "${KIPRJMOD}/keeb-libs/models/holyiot_18010_v2.step"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 0))

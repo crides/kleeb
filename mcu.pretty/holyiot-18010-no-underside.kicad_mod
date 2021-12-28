@@ -1,11 +1,11 @@
-(footprint "Holyiot-18010-no-underside" (version 20210722) (generator pcbnew) (layer "F.Cu")
+(footprint "holyiot-18010-no-underside" (version 20210722) (generator pcbnew) (layer "F.Cu")
   (tedit 61382EF1)
   (attr smd)
   (fp_text reference "REF**" (at 0 10.7) (layer "F.SilkS")
     (effects (font (size 1 1) (thickness 0.15)))
     (tstamp 32a79f0f-ed80-4423-afe8-b9720b215c34)
   )
-  (fp_text value "Holyiot_18010_no_underside" (at 0 -10.25) (layer "F.Fab")
+  (fp_text value "holyiot-18010-no-underside" (at 0 -10.25) (layer "F.Fab")
     (effects (font (size 1 1) (thickness 0.15)))
     (tstamp 501ce62d-6bde-4512-ba52-c5ee3c3ee852)
   )
@@ -90,7 +90,7 @@
       )
     )
   )
-  (model "${KIPRJMOD}/keeb-libs/models/Holyiot_18010_v2.step"
+  (model "${KIPRJMOD}/keeb-libs/models/holyiot_18010_v2.step"
     (offset (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 0))
