@@ -1,6 +1,10 @@
 # Kleeb
 
-This is a collection of the Kicad symbols, footprints and 3D models useful in keyboard creation other than normal mechanical switches and the ones included in Kicad's standard library, all in 6.0 format. I didn't create all of them, and some come from either other people on Discord, or from other online resources that isn't in a Git tree. Putting them in a centralized place means it's easier for people to use, distribute, and compare, and changes can be made in a clearer way. I'll try to list the sources down below, but due to the nature of the sources they maybe incorrect/missing. If you have a problem with how I'm using/distributing them please let me know.
+This is a collection of the Kicad symbols, footprints and 3D models useful in keyboard creation other than normal mechanical switches and the ones included in Kicad's standard library, all in 6.0 format. I didn't create all of them, and some come from either other people on Discord, or from other online resources that isn't in a Git tree. Putting them in a centralized place means it's easier for people to use, distribute*, and compare, and changes can be made in a clearer way. I'll try to list the sources down below, but due to the nature of the sources they maybe incorrect/missing. If you have a problem with how I'm using/distributing them please let me know.
+
+## License
+
+Those directly created by me is licensed under MIT. Those came from Discord are technically in a grey zone, as they are shared without a (explicit) license. For those that came from other sources, the original license should be used. I do not intend to claim ownership over them, and they are here so they can be easily included in future projects.
 
 ## Symbols
 
