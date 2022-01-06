@@ -1,5 +1,5 @@
 from KicadModTree import *
-import math
+import math, os
 
 LAYERS_BACK = Pad.LAYERS_CONNECT_BACK
 LAYERS_FRONT = Pad.LAYERS_CONNECT_FRONT
@@ -13,7 +13,7 @@ def footprint(dir: str, name: str, smd: bool, entities: list):
     if smd:
         fp.setAttribute("smd")
     fp.extend(entities)
-    KicadFileHandler(fp).writeFile(f"{dir}.pretty/{name}.kicad_mod")
+    KicadFileHandler(fp).writeFile(os.path.normpath(os.path.dirname(__file__) + f"/{dir}.pretty/{name}.kicad_mod"))
 
 def vecadd(a, b):
     return (a[0] + b[0], a[1] + b[1])

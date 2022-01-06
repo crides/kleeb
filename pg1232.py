@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 from lib import *
+import os
 
 pin_size = (1.6, 1.1)
 top_pos = lambda y: (2, y + 5.4)
@@ -90,7 +91,8 @@ for diode in [False, True]:
         for cap, outline in cap_variants(off):
             var = ("D" if diode else "") + ("R" if rev else "") + cap
             name = "pg1232" + ("-" + var if var else var)
+            model_path = os.path.normpath(os.path.dirname(__file__) + "/models/pg1232.step")
             footprint("pg1232", name, diode, core(off) + pins(off, rev, diode)
                             + cap_outline(outline)
                             + (diode_pads(rev) if diode else [])
-                            + [Model(filename="/home/steven/gitproj/fusion/choc/models/pg1232.step", at=(0, -0.1712598425, 0))])
+                            + [Model(filename=model_path, at=(0, -0.1712598425, 0))])
