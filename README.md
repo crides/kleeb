@@ -40,6 +40,7 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 - `LCD2.2in`: created by me.
 - `OLED-128x32`: created by me.
 - `OLED-128x32-cutout`: Same as above, but show the display area. Data came from `@rain` on Discord
+- `OLED-128x32-double-sided`: Same as above, but has jumpers on both sides allowing the OLED to be installed on both sides. The jumpers on the reverse side of the display are to be soldered.
 - `OLED-128x64`: created by me.
 - `TM022HDH26`: created by me. Holes follow the positions on datasheet, pads are measured data
 - `TM022HDH26_back`: Same as above, but pads are on the different side of PCB
@@ -80,3 +81,6 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 - `hro-type-c-31-m-12`: Not sure of source; I probably got it on Discord
 - `MBK-1u`: [From `@darryldh` on Thingiverse](https://www.thingiverse.com/thing:4564253)
 - `SKRHAD`: [From Alps](https://tech.alpsalpine.com/prod/e/html/multicontrol/switch/skrh/skrhace010.html)
+- `OLED-128x32`: Not sure from where. Model for the 128x32 OLED displays
+- `TF31-12S-0.5SH`: Not sure from where exactly, should be a manufactorer model. 0.5mm pitched 12pin FPC ZIF socket
+- `JST-PH-S2B-R`: [From SnapEDA on Digikey](https://www.digikey.com/short/p1d9b87m). JST PH SMD 2pin connector, commonly used for batteries. [Product on Adafruit](https://www.adafruit.com/product/1769)
