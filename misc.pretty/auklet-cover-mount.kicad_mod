@@ -1,5 +1,7 @@
-(footprint "auklet-cover-mount" (version 20210722) (generator pcbnew) (layer "F.Cu")
-  (tedit 61C7CF4F)
+(footprint "auklet-cover-mount" (version 20211014) (generator pcbnew)
+  (layer "F.Cu")
+  (tedit 61D92FFE)
+  (attr exclude_from_pos_files)
   (fp_text reference "REF**" (at 0 -0.5 unlocked) (layer "F.SilkS") hide
     (effects (font (size 1 1) (thickness 0.15)))
     (tstamp 20f74c7d-f2ea-4148-b976-a3c9ea0255fe)
