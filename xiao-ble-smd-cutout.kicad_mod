@@ -1,7 +1,7 @@
 (footprint "xiao-ble-smd-cutout" (version 20211014) (generator pcbnew)
   (layer "F.Cu")
-  (tedit 61CCFEF9)
-  (attr smd)
+  (tedit 61D90098)
+  (attr smd exclude_from_pos_files)
   (fp_text reference "U?" (at -19.3989 -11.28268) (layer "F.SilkS") hide
     (effects (font (size 0.889 0.889) (thickness 0.1016)))
     (tstamp 1c479411-a194-4685-8eeb-e81966c16c7f)
