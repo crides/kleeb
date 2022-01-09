@@ -32,6 +32,8 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 
 - `holyiot-18010`: From someone else on Discord, but modified by me. [Holyiot 18010 nRF52840 BLE module](https://www.aliexpress.com/i/32868002366.html)
 - `holyiot-18010-no-underside`: Same as above, but without underside pads
+- `xiao`: created by me, merged from the `xiao` repo. The [Xiao controller](https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html) from Seeed Studio.
+- `xiao-ble`: Same as above. The [Xiao BLE controller](https://www.seeedstudio.com/Seeed-XIAO-BLE-nRF52840-p-5201.html) from Seeed Studio.
 
 ## Footprints
 
@@ -52,6 +54,11 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 
 - `holyiot-18010`: Probably from someone on Discord, modified by me. [Holyiot 18010 nRF52840 BLE module](https://www.aliexpress.com/i/32868002366.html)
 - `holyiot-18010-no-underside`: Same as above
+- `xiao-smd`: created by me, merged from the `xiao` repo. The Xiao controller with SMD pads, with throughole pads for the 4 underside pads.
+- `xiao-tht`: Same as above. The Xiao controller with THT pads, with throughole pads for the 4 underside pads.
+- `xiao-ble-smd`: Same as above. The Xiao BLE controller with SMD pads, with throughole pads for the 4 pads under USB-C connector, 2 battery pads, and 2 NFC pads.
+- `xiao-ble-tht`: Same as above. The Xiao BLE controller with THT pads, with throughole pads for the 4 pads under USB-C connector, 2 battery pads, and 2 NFC pads.
+- `xiao-ble-tht-cutout`: Same as above. The Xiao BLE controller with THT pads, with throughole pads for the 4 pads under USB-C connector, 2 battery pads, and 2 NFC pads, except there are cutouts around the underside pads, so that one can cut around the pads making it easier to solder those pads.
 
 ### `misc`
 
