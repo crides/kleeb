@@ -34,7 +34,8 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 - `holyiot-18010-no-underside`: Same as above, but without underside pads
 - `xiao`: created by me, merged from the `xiao` repo. The [Xiao controller](https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html) from Seeed Studio.
 - `xiao-ble`: Same as above. The [Xiao BLE controller](https://www.seeedstudio.com/Seeed-XIAO-BLE-nRF52840-p-5201.html) from Seeed Studio.
-
+- `rp2040-zero`: created by me. The [RP2040 Zero controller](https://www.waveshare.com/rp2040-zero.htm) by WaveShare.
+-
 ## Footprints
 
 ### `display`
@@ -59,6 +60,8 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 - `xiao-ble-smd`: Same as above. The Xiao BLE controller with SMD pads, with throughole pads for the 4 pads under USB-C connector, 2 battery pads, and 2 NFC pads.
 - `xiao-ble-tht`: Same as above. The Xiao BLE controller with THT pads, with throughole pads for the 4 pads under USB-C connector, 2 battery pads, and 2 NFC pads.
 - `xiao-ble-tht-cutout`: Same as above. The Xiao BLE controller with THT pads, with throughole pads for the 4 pads under USB-C connector, 2 battery pads, and 2 NFC pads, except there are cutouts around the underside pads, so that one can cut around the pads making it easier to solder those pads.
+- `rp2040-zero-smd`: created by me. The RP2040 Zero controller by WaveShare, with SMD pads and a cutout for the MCU itself.
+- `rp2040-zero-tht`: Same as above. The RP2040 Zero controller, with THT pads and a cutout for the MCU itself.
 
 ### `misc`
 
