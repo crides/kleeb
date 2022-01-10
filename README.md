@@ -63,6 +63,8 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 - `xiao-ble-tht-cutout`: Same as above. The Xiao BLE controller with THT pads, with throughole pads for the 4 pads under USB-C connector, 2 battery pads, and 2 NFC pads, except there are cutouts around the underside pads, so that one can cut around the pads making it easier to solder those pads.
 - `rp2040-zero-smd`: created by me. The RP2040 Zero controller by WaveShare, with SMD pads and a cutout for the MCU itself.
 - `rp2040-zero-tht`: Same as above. The RP2040 Zero controller, with THT pads and a cutout for the MCU itself.
+- `rp2040-zero-smd-pads` and `rp2040-zero-tht-pads`: ___Experimental!___ Same as above, plus throughole pads to solder underside pads.
+- `rp2040-zero-smd-pads-cutout` and `rp2040-zero-tht-pads-cutout`: ___Experimental!___ Same as above, but the pads can be made into castellated ones by cutting through the pads?
 
 ### `misc`
 
