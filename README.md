@@ -12,6 +12,10 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 
 - `MCP23S08`: From @petejohanson, converted to 6.0. 8-bit SPI bidirectional I/O expander, missing from Kicad libray
 - `MT25QL128ABA1ESE`: created by me. 128Mib/16MiB QSPI NOR flash
+- `CMM4030D`: I2S microphone
+- `TMP117`: I2C high accuracy temperature sensor
+- `IS31FL3729`: 16x8 or 15x9 I2C LED matrix driver
+- `MAX98357A`: I2S DAC amplifier
 
 ### `display`
 
@@ -23,6 +27,10 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 - `adafruit-sharp-memory-display`: created by me. [Adafruit 1.3in SHARP memory display module](https://www.adafruit.com/product/3502)
 - `adafruit-sharp-memory-display-no-useless`: created by me. Same as above but without non-necessary pins
 - `TM022HDH26`: created by me. [2.2in raw SPI TFT LCD module](https://www.aliexpress.com/item/32417585937.html)
+
+### `ic`
+
+- `CMM4030D`, `eTQFP-32_7x7mm_P0.8mm`: created by me from datasheet
 
 ### `switch`
 
@@ -78,6 +86,7 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 - `debug-port-single-side`: Same as above, but only top side has solder mask
 - `embedded`: created by me. The embedded steno logo
 - `hirose-df30fb-20ds-0.4v(82)`: probably from Digikey
+- `CMS1609`: created by me from datasheet
 
 ### `switch`
 
