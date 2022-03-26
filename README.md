@@ -87,6 +87,7 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 - `embedded`: created by me. The embedded steno logo
 - `hirose-df30fb-20ds-0.4v(82)`: probably from Digikey
 - `CMS1609`: created by me from datasheet
+- `molex-503182-1852`: probably from DigiKey
 
 ### `switch`
 
