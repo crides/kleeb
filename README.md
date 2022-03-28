@@ -94,6 +94,7 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 - `SKRHA-boss`: created by me, following datasheet from Alps
 - `SKRHA-no-boss`: same as above
 - `switch-MSK-12C02-smd`: Not sure where from
+- `EVQWGD001`: Fetched from `@darryldh` on Discord, not sure of origin
 
 ### `pg1350` and `pg1232`
 
@@ -128,3 +129,4 @@ All the following variants are spacing variants, which is useless for most peopl
 - `JST-PH-S2B-R`: [From SnapEDA on Digikey](https://www.digikey.com/short/p1d9b87m). JST PH SMD 2pin connector, commonly used for batteries. [Product on Adafruit](https://www.adafruit.com/product/1769)
 - `pg1350`, `pg1350-mbk`, `pg1232`, `pg1232-mbk`: created by me. pg1350 and pg1232 choc switch models with MBK 1u keycaps. The pg1350 model is taken directly from [here](https://grabcad.com/library/kailh-choc-low-profile-switch-1), and the MBK model from [here](https://www.thingiverse.com/thing:4564253/files). The pg1232 model is made by me through cutting and rejoining pieces of the pg1350 model, which should immitate the general model but is otherwise very janky. The joint choc and MBK models are simply the combinations of the switch models and the MBK model.
 - `rp2040-zero`: From the low pro Discord from `@gerrycave` from WaveShare. _Giant_ model of the RP2040-Zero, recentered by me through FreeCAD.
+- `EVQWGD001`: A copy of <https://grabcad.com/library/panasonic-evqwgd001-encoder-1#!>. Doesn't seem to match footprint
