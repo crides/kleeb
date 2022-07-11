@@ -44,6 +44,7 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 - `xiao`: created by me, merged from the `xiao` repo. The [Xiao controller](https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html) from Seeed Studio.
 - `xiao-ble`: Same as above. The [Xiao BLE controller](https://www.seeedstudio.com/Seeed-XIAO-BLE-nRF52840-p-5201.html) from Seeed Studio.
 - `rp2040-zero`: created by me. The [RP2040 Zero controller](https://www.waveshare.com/rp2040-zero.htm) by WaveShare.
+- `ms88sf3-nrf52840`, `ms88sf3-nrf52840-split`: From @Kurtis on Discord, who used a split symbol. I merged the ground pins and merged the units for the symbols, and corrected the footprint according to the datasheet, also making the keepout 5mm wide.
 
 ## Footprints
 
