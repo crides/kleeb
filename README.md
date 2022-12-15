@@ -90,6 +90,7 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 - `CMS1609`: created by me from datasheet
 - `molex-503182-1852`: probably from DigiKey
 - `KXBG25-05X3F`: created by me from datasheet, for [a small solar cell](https://www.digikey.com/en/products/detail/anysolar-ltd/KXOB25-05X3F-TR/9990478)
+- `nothing`: Literal nothing. Mainly for placing 3D models
 
 ### `switch`
 
