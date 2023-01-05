@@ -123,6 +123,7 @@ All the following variants are spacing variants, which is useless for most peopl
 
 - `S`: shorter spacing, only affects the cap outline. To be used with 15mm vertical spacing. This as close vertical as chocs gets without modding the switch itself;
 - `SS`: "Super Short": even shorter spacing, only affects the cap outline. To be used with 13.5mm vertical spacing. This as close vertical as choc minis (pg1232) gets without modding the switch itself;
+- `C`: "compact": only for pg1232, with the side tabs chopped off (not tested yet, measured as such)
 - `L` & `R`: only when used with `SS`; off centered spacing for use with same finger double column (e.g. most commonly the 2 columns for index finger, or columns for pinky).
 - `N`: only when used with `SS`; as narrow as possible (14.5mm; or is the intersection of the `L` and `R` variants)
 
