@@ -67,8 +67,7 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 
 ### `mcu`
 
-- `holyiot-18010`: Probably from someone on Discord, modified by me. [Holyiot 18010 nRF52840 BLE module](https://www.aliexpress.com/i/32868002366.html)
-- `holyiot-18010-no-underside`: Same as above
+- `holyiot-18010`, `holyiot-18010-no-underside`: Probably from someone on Discord, modified by me. [Holyiot 18010 nRF52840 BLE module](https://www.aliexpress.com/i/32868002366.html)
 - `xiao-smd`: created by me, merged from the `xiao` repo. The Xiao controller with SMD pads, with throughole pads for the 4 underside pads.
 - `xiao-tht`: Same as above. The Xiao controller with THT pads, with throughole pads for the 4 underside pads.
 - `xiao-ble-smd`: Same as above. The Xiao BLE controller with SMD pads, with throughole pads for the 4 pads under USB-C connector, 2 battery pads, and 2 NFC pads.
@@ -98,10 +97,10 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 
 ### `switch`
 
-- `SKRHA-boss`: created by me, following datasheet from Alps
-- `SKRHA-no-boss`: same as above
+- `SKRHA-boss`, `SKRHA-no-boss`: created by me, following datasheet from Alps
 - `switch-MSK-12C02-smd`: Not sure where from
 - `EVQWGD001`: Fetched from `@darryldh` on Discord, not sure of origin
+- `SKRHA-boss`: created by me, following datasheet from Alps
 
 ### `sensor`
 
