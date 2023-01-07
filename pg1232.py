@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+from typing import Tuple
 from lib import *
 import os
 
@@ -53,12 +54,23 @@ cap_variants = lambda y: [
 
 trace_width = 0.254     # mm
 
-def pins(y: float, rev: bool, diode: bool):
+def pins(y: float, rev: bool, diode: bool, hotswap: bool):
+    def oval(pos, layers, n=None):
+        attrs = {"number": n} if n != None else {}
+        return Pad(type=Pad.TYPE_THT, shape=Pad.SHAPE_OVAL, at=pos, size=(2, 1.5), drill=(1, 0.5), layers=layers, **attrs)
+    def oval_vert(pos, layers, n=None):
+        pad = oval(pos, layers, n)
+        pad.rotation = 90
+        return pad
+    def circle(pos: Tuple[float, float], layers, n=None):
+        return pth(*pos, *pin_size, layers, n)
+    vert = oval_vert if hotswap else circle
+    horiz = oval if hotswap else circle
     side_pin_num = None if diode else 2
-    normal = [pth(*top_pos(y), *pin_size, LAYERS_BTHT, n=1), pth(*side_pos(y), *pin_size, LAYERS_BTHT, n=side_pin_num)]
-    reved = [pth(*x_mir(top_pos(y)), *pin_size, LAYERS_FTHT, n=1), pth(*x_mir(side_pos(y)), *pin_size, LAYERS_FTHT, n=side_pin_num)]
+    normal = [horiz(top_pos(y), LAYERS_BTHT, n=1), vert(side_pos(y), LAYERS_BTHT, n=side_pin_num)]
+    reved = [horiz(x_mir(top_pos(y)), LAYERS_FTHT, n=1), vert(x_mir(side_pos(y)), LAYERS_FTHT, n=side_pin_num)]
     stab_layer = LAYERS_THT if rev else LAYERS_BTHT
-    stabs = [pth(*stab_pos(y), *pin_size, stab_layer), pth(*x_mir(stab_pos(y)), *pin_size, stab_layer)]
+    stabs = [vert(stab_pos(y), stab_layer), vert(x_mir(stab_pos(y)), stab_layer)]
     return normal + (reved if rev else []) + stabs
 
 diode_off = 4.35
@@ -92,12 +104,13 @@ def diode_pads(rev):
 
 for diode in [False, True]:
     for rev in [False, True]:
-        off = diode_off if diode else 0
-        for cap, outline in cap_variants(off):
-            var = ("D" if diode else "") + ("R" if rev else "") + cap
-            name = "pg1232" + ("-" + var if var else var)
-            model_path = os.path.normpath(os.path.dirname(__file__) + "/models/pg1232.step")
-            footprint("pg1232", name, diode, core(off) + pins(off, rev, diode)
-                            + cap_outline(outline)
-                            + (diode_pads(rev) if diode else [])
-                            + [Model(filename=model_path, at=(0, -0.1712598425, 0))])
+        for hotswap in [False, True]:
+            off = diode_off if diode else 0
+            for cap, outline in cap_variants(off):
+                var = ("D" if diode else "") + ("R" if rev else "") + ("H" if hotswap else "") + cap
+                name = "pg1232" + ("-" + var if var else var)
+                model_path = os.path.normpath(os.path.dirname(__file__) + "/models/pg1232.step")
+                footprint("pg1232", name, diode, core(off) + pins(off, rev, diode, hotswap)
+                                + cap_outline(outline)
+                                + (diode_pads(rev) if diode else [])
+                                + [Model(filename=model_path, at=(0, (-diode_off / 2.54 if diode else 0), 0))])

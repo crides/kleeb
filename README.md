@@ -117,6 +117,7 @@ The outline on `User.Comments` is the outline of the side tabs, and the one on `
 All of the footprints are auto generated now. Different letters signify different variations.
 - `D`: includes diode in the footprint. It uses choc LED hole for (optional) SOD-123 diode placement, and the internal connections are already made. The center of the footprint is placed on the center of the diode to help with PCBA, and it's meant to be used with the custom symbol signifying that it has a builtin diode; 
 - `R`: footprint is reversible. Througholes are included for both sides, another pad is used to connect the duplicated hole, and vias are used inside of the diode pads to connect the diodes on both sides, and silkscreens are duplicated on both sides;
+- `H`: Hotswap footprint. Currently only supports pg1232 choc minis, using the PCB itself as the socket. Pad shape and idea borrowed from [@davidphilipbarr](https://github.com/davidphilipbarr). ___Untested!___
 
 All the following variants are spacing variants, which is useless for most people and I keep it here for my own sake.
 
