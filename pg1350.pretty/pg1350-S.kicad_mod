@@ -1,4 +1,4 @@
-(module pg1350-S (layer F.Cu) (tedit 617C445D)
+(module pg1350-S (layer F.Cu) (tedit 63B92BFF)
   (fp_text reference REF** (at 0 0) (layer F.Fab) hide
     (effects (font (size 1 1) (thickness 0.15)))
   )

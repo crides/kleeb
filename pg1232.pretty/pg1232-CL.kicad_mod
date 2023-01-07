@@ -1,4 +1,4 @@
-(module pg1232-CL (layer F.Cu) (tedit 62C524CF)
+(module pg1232-CL (layer F.Cu) (tedit 63B92A83)
   (fp_text reference REF** (at 0 0) (layer F.Fab) hide
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -34,9 +34,9 @@
   (pad "" np_thru_hole oval (at 0 0) (size 11.7 5.8) (drill oval 11.7 5.8) (layers *.Mask))
   (pad 1 thru_hole circle (at 2 5.4) (size 1.6 1.6) (drill 1.1) (layers *.Cu B.Mask))
   (pad 2 thru_hole circle (at -4.58 5.1) (size 1.6 1.6) (drill 1.1) (layers *.Cu B.Mask))
-  (pad 3 thru_hole circle (at 5.3 -4.75) (size 1.6 1.6) (drill 1.1) (layers *.Cu B.Mask))
-  (pad 4 thru_hole circle (at -5.3 -4.75) (size 1.6 1.6) (drill 1.1) (layers *.Cu B.Mask))
-  (model /home/steven/gitproj/fusion/kleeb/models/pg1232.step
+  (pad "" thru_hole circle (at 5.3 -4.75) (size 1.6 1.6) (drill 1.1) (layers *.Cu B.Mask))
+  (pad "" thru_hole circle (at -5.3 -4.75) (size 1.6 1.6) (drill 1.1) (layers *.Cu B.Mask))
+  (model /home/steven/gitproj/musk/kleeb/models/pg1232.step
     (at (xyz 0 -0.17126 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

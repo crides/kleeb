@@ -54,10 +54,11 @@ cap_variants = lambda y: [
 trace_width = 0.254     # mm
 
 def pins(y: float, rev: bool, diode: bool):
-    normal = [pth(1, *top_pos(y), *pin_size, LAYERS_BTHT), pth((3 if diode else 2), *side_pos(y), *pin_size, LAYERS_BTHT)]
-    reved = [pth(1, *x_mir(top_pos(y)), *pin_size, LAYERS_FTHT), pth((3 if diode else 2), *x_mir(side_pos(y)), *pin_size, LAYERS_FTHT)]
+    side_pin_num = None if diode else 2
+    normal = [pth(*top_pos(y), *pin_size, LAYERS_BTHT, n=1), pth(*side_pos(y), *pin_size, LAYERS_BTHT, n=side_pin_num)]
+    reved = [pth(*x_mir(top_pos(y)), *pin_size, LAYERS_FTHT, n=1), pth(*x_mir(side_pos(y)), *pin_size, LAYERS_FTHT, n=side_pin_num)]
     stab_layer = LAYERS_THT if rev else LAYERS_BTHT
-    stabs = [pth((5 if diode else 3), *stab_pos(y), *pin_size, stab_layer), pth(4, *x_mir(stab_pos(y)), *pin_size, stab_layer)]
+    stabs = [pth(*stab_pos(y), *pin_size, stab_layer), pth(*x_mir(stab_pos(y)), *pin_size, stab_layer)]
     return normal + (reved if rev else []) + stabs
 
 diode_off = 4.35
@@ -68,7 +69,7 @@ def diode_pads(rev):
     left_pad = (-1.65, 0)
     pad_size = (0.9, 1.2)
     core = [
-        Pad(number=3, type=Pad.TYPE_SMT, shape=Pad.SHAPE_CUSTOM, at=left_pad, size=(trace_width, trace_width),
+        Pad(type=Pad.TYPE_SMT, shape=Pad.SHAPE_CUSTOM, at=left_pad, size=(trace_width, trace_width),
             primitives=[Line(start=(-4.75, 7.63), end=(-2.93, 9.45), width=trace_width),
                         Line(start=(0, 0), end=(-1.3, 0), width=trace_width),
                         Line(start=(-1.3, 0), end=(-2.25, 0.95), width=trace_width),
@@ -84,7 +85,7 @@ def diode_pads(rev):
         Line(start=(2.25, -1), end=(-1.65, -1), layer=layer),
     ]
     pads = [
-        Pad(number=3, type=typ, shape=Pad.SHAPE_RECT, at=left_pad, size=pad_size, drill=drill, layers=layers),
+        Pad(type=typ, shape=Pad.SHAPE_RECT, at=left_pad, size=pad_size, drill=drill, layers=layers),
         Pad(number=2, type=typ, shape=Pad.SHAPE_RECT, at=x_mir(left_pad), size=pad_size, drill=drill, layers=layers),
     ]
     return core + pads + silk('F.SilkS') + (silk('B.SilkS') if rev else [])

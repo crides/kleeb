@@ -37,9 +37,9 @@ cap_variants = lambda y: [
 trace_width = 0.254     # mm
 
 def pins(y: float, rev: bool, diode: bool):
-    mid_pin = 3 if diode else 2
-    normal = [pth(mid_pin, *top_pos(y), *pin_size, LAYERS_BTHT), pth(1, *bot_pos(y), *pin_size, LAYERS_BTHT)]
-    reved = [pth(mid_pin, *x_mir(top_pos(y)), *pin_size, LAYERS_FTHT), pth(1, *x_mir(bot_pos(y)), *pin_size, LAYERS_FTHT)]
+    side_pin_num = None if diode else 2
+    normal = [pth(*top_pos(y), *pin_size, LAYERS_BTHT, n=side_pin_num), pth(*bot_pos(y), *pin_size, LAYERS_BTHT, n=1)]
+    reved = [pth(*x_mir(top_pos(y)), *pin_size, LAYERS_FTHT, n=side_pin_num), pth(*x_mir(bot_pos(y)), *pin_size, LAYERS_FTHT, n=1)]
     stabs = [npth(*p, 1.3) for p in stab_poses(y)]
     return normal + (reved if rev else []) + stabs
 
@@ -48,12 +48,16 @@ def diode_pads(rev):
     typ = Pad.TYPE_THT if rev else Pad.TYPE_SMT
     layers = Pad.LAYERS_THT if rev else Pad.LAYERS_SMT
     drill = 0.4 if rev else 0
-    left_pad = (-1.65, 0)
+    right_pad = (1.65, 0)
     pad_size = (0.9, 1.2)
+    tr_pin = top_pos(diode_off)
+    dx, dy = tr_pin[0] - right_pad[0], tr_pin[1]
+    rev_diode_route = [Line(start=(-2 * tr_pin[0] + dx, dy), end=(-2 * tr_pin[0] + dx * 2, dy - dx), width=trace_width),
+                       Line(start=(-2 * tr_pin[0] + dx * 2, dy - dx), end=(0, dy - dx), width=trace_width)]
     core = [
-        Pad(number=3, type=Pad.TYPE_SMT, shape=Pad.SHAPE_CUSTOM, at=x_mir(left_pad), size=(trace_width, trace_width),
-            primitives=[Line(start=(0, 0), end=(1.75, 1.75), width=trace_width),
-                        Line(start=(1.75, 1.75), end=(1.75, 2.7), width=trace_width)],
+        Pad(type=Pad.TYPE_SMT, shape=Pad.SHAPE_CUSTOM, at=right_pad, size=(trace_width, trace_width),
+            primitives=[Line(start=(0, 0), end=(0, dy - dx), width=trace_width),
+                        Line(start=(0, dy - dx), end=(dx, dy), width=trace_width)] + (rev_diode_route if rev else []),
             layers=['F.Cu']),
         RectLine(start=(1.4, 0.9), end=(-1.4, -0.9), layer='F.Fab', width=0.12),
     ]
@@ -63,8 +67,8 @@ def diode_pads(rev):
         Line(start=(2.25, -1), end=(-1.65, -1), layer=layer),
     ]
     pads = [
-        Pad(number=2, type=typ, shape=Pad.SHAPE_RECT, at=left_pad, size=pad_size, drill=drill, layers=layers),
-        Pad(number=3, type=typ, shape=Pad.SHAPE_RECT, at=x_mir(left_pad), size=pad_size, drill=drill, layers=layers),
+        Pad(number=2, type=typ, shape=Pad.SHAPE_RECT, at=x_mir(right_pad), size=pad_size, drill=drill, layers=layers),
+        Pad(type=typ, shape=Pad.SHAPE_RECT, at=right_pad, size=pad_size, drill=drill, layers=layers),
     ]
     return core + pads + silk('F.SilkS') + (silk('B.SilkS') if rev else [])
 

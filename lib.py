@@ -50,5 +50,6 @@ def cap_outline(outline, shrink=0):
 def npth(x, y, r):
     return Pad(type=Pad.TYPE_NPTH, shape=Pad.SHAPE_CIRCLE, at=(x, y), size=(r, r), drill=r, layers=Pad.LAYERS_THT)
 
-def pth(n, x, y, p, r, layers):
-    return Pad(number=n, type=Pad.TYPE_THT, shape=Pad.SHAPE_CIRCLE, at=(x, y), size=(p, p), drill=r, layers=layers)
+def pth(x, y, p, r, layers, n=None):
+    attrs = {"number": n} if n != None else {}
+    return Pad(type=Pad.TYPE_THT, shape=Pad.SHAPE_CIRCLE, at=(x, y), size=(p, p), drill=r, layers=layers, **attrs)

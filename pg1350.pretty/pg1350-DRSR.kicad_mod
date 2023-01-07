@@ -1,4 +1,4 @@
-(module pg1350-DRSR (layer F.Cu) (tedit 617C445D)
+(module pg1350-DRSR (layer F.Cu) (tedit 63B92BFF)
   (attr smd)
   (fp_text reference REF** (at 0 0) (layer F.Fab) hide
     (effects (font (size 1 1) (thickness 0.15)))
@@ -48,9 +48,9 @@
   (pad "" np_thru_hole circle (at -5.5 -4.5) (size 1.7 1.7) (drill 1.7) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 5.5 -4.5) (size 1.7 1.7) (drill 1.7) (layers *.Cu *.Mask))
   (pad 1 thru_hole circle (at 0 -10.4) (size 2 2) (drill 1.2) (layers *.Cu *.Mask))
-  (pad 3 thru_hole circle (at 5 -8.3) (size 2 2) (drill 1.2) (layers *.Cu B.Mask))
-  (pad 3 thru_hole circle (at -5 -8.3) (size 2 2) (drill 1.2) (layers *.Cu F.Mask))
-  (pad 3 smd custom (at 5 -8.3) (size 0.254 0.254) (layers F.Cu)
+  (pad "" thru_hole circle (at 5 -8.3) (size 2 2) (drill 1.2) (layers *.Cu B.Mask))
+  (pad "" thru_hole circle (at -5 -8.3) (size 2 2) (drill 1.2) (layers *.Cu F.Mask))
+  (pad "" smd custom (at 5 -8.3) (size 0.254 0.254) (layers F.Cu)
     (options (clearance outline) (anchor circle))
     (primitives
       (gr_line (start 0 0) (end -2 2) (width 0.254))
@@ -58,8 +58,8 @@
       (gr_line (start -2 6.95) (end -3.35 8.3) (width 0.254))
     ))
   (pad 2 thru_hole rect (at -1.65 0) (size 0.9 1.2) (drill 0.4) (layers *.Cu *.Mask))
-  (pad 3 thru_hole rect (at 1.65 0) (size 0.9 1.2) (drill 0.4) (layers *.Cu *.Mask))
-  (pad 3 smd custom (at -5 -8.3) (size 0 0) (layers B.Cu)
+  (pad "" thru_hole rect (at 1.65 0) (size 0.9 1.2) (drill 0.4) (layers *.Cu *.Mask))
+  (pad "" smd custom (at -5 -8.3) (size 0.254 0.254) (layers B.Cu)
     (options (clearance outline) (anchor circle))
     (primitives
       (gr_line (start 0 0) (end 10 0) (width 0.254))
