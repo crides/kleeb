@@ -10,7 +10,7 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 
 ### `ic`
 
-- `MCP23S08`: From @petejohanson, converted to 6.0. 8-bit SPI bidirectional I/O expander, missing from Kicad libray
+- `MCP23S08`: From [@petejohanson](https://github.com/petejohanson), converted to 6.0. 8-bit SPI bidirectional I/O expander, missing from Kicad libray
 - `MT25QL128ABA1ESE`: created by me. 128Mib/16MiB QSPI NOR flash
 - `CMM4030D`: I2S microphone
 - `TMP117`: I2C high accuracy temperature sensor
@@ -44,7 +44,7 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 - `xiao`: created by me, merged from the `xiao` repo. The [Xiao controller](https://www.seeedstudio.com/Seeeduino-XIAO-Arduino-Microcontroller-SAMD21-Cortex-M0+-p-4426.html) from Seeed Studio.
 - `xiao-ble`: Same as above. The [Xiao BLE controller](https://www.seeedstudio.com/Seeed-XIAO-BLE-nRF52840-p-5201.html) from Seeed Studio.
 - `rp2040-zero`: created by me. The [RP2040 Zero controller](https://www.waveshare.com/rp2040-zero.htm) by WaveShare.
-- `ms88sf3-nrf52840`, `ms88sf3-nrf52840-split`: From @Kurtis on Discord, who used a split symbol. I merged the ground pins and merged the units for the symbols, and corrected the footprint according to the datasheet, also making the keepout 5mm wide.
+- `ms88sf3-nrf52840`, `ms88sf3-nrf52840-split`: From [@Kurtis](https://github.com/kurtis-lew) on Discord, who used a split symbol. I merged the ground pins and merged the units for the symbols, and corrected the footprint according to the datasheet, also making the keepout 5mm wide.
 
 ### `sensor`
 
@@ -99,12 +99,12 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 
 - `SKRHA-boss`, `SKRHA-no-boss`: created by me, following datasheet from Alps
 - `switch-MSK-12C02-smd`: Not sure where from
-- `EVQWGD001`: Fetched from `@darryldh` on Discord, not sure of origin
+- `EVQWGD001`: Fetched from [@darryldh](https://github.com/Darryldh) on Discord, not sure of origin
 - `SKRHA-boss`: created by me, following datasheet from Alps
 
 ### `sensor`
 
-- `PMW3610`: created by @ufan, from [their breakout board](https://github.com/ufan/pmw3610_breakout)
+- `PMW3610`: created by [@ufan](https://github.com/ufan), from [their breakout board](https://github.com/ufan/pmw3610_breakout)
 
 ### `pg1350`, `pg1232` and `pg1425`
 
@@ -129,12 +129,12 @@ All the following variants are spacing variants, which is useless for most peopl
 
 ## Models
 
-- `adafruit-sharp-memory-display`: Obtained from @petejohanson on Discord, not sure of creator
+- `adafruit-sharp-memory-display`: Obtained from [@petejohanson](https://github.com/petejohanson) on Discord, not sure of creator
 - `adafruit-sharp-memory-display-no-mounting`: As above, but edited to cut off mounting screw holes
 - `BA1AAAPC`: [From Digikey](https://www.digikey.com/en/products/detail/mpd-memory-protection-devices/BA1AAAPC/8119216). Low profile AAA battery holder
-- `holyiot-18010`: From `@darryldh` on Discord
+- `holyiot-18010`: From [@darryldh](https://github.com/Darryldh) on Discord
 - `hro-type-c-31-m-12`: Not sure of source; I probably got it on Discord
-- `MBK-1u`: [From `@darryldh` on Thingiverse](https://www.thingiverse.com/thing:4564253)
+- `MBK-1u`: [From @darryldh on Thingiverse](https://www.thingiverse.com/thing:4564253) ([@darryldh](https://github.com/Darryldh))
 - `SKRHAD`: [From Alps](https://tech.alpsalpine.com/prod/e/html/multicontrol/switch/skrh/skrhace010.html)
 - `OLED-128x32`: Not sure from where. Model for the 128x32 OLED displays
 - `TF31-12S-0.5SH`: Not sure from where exactly, should be a manufactorer model. 0.5mm pitched 12pin FPC ZIF socket
@@ -142,5 +142,5 @@ All the following variants are spacing variants, which is useless for most peopl
 - `pg1350`, `pg1350-mbk`, `pg1232`, `pg1232-mbk`: created by me. pg1350 and pg1232 choc switch models with MBK 1u keycaps. The pg1350 model is taken directly from [here](https://grabcad.com/library/kailh-choc-low-profile-switch-1), and the MBK model from [here](https://www.thingiverse.com/thing:4564253/files). The pg1232 model is made by me through cutting and rejoining pieces of the pg1350 model, which should immitate the general model but is otherwise very janky. The joint choc and MBK models are simply the combinations of the switch models and the MBK model.
 - `rp2040-zero`: From the low pro Discord from `@gerrycave` from WaveShare. _Giant_ model of the RP2040-Zero, recentered by me through FreeCAD.
 - `EVQWGD001`: A copy of <https://grabcad.com/library/panasonic-evqwgd001-encoder-1#!>. Doesn't seem to match footprint
-- `TM035035`: From @freznel on Discord, originated from Cirque.
+- `TM035035`: From [@freznel](https://github.com/freznel10) on Discord, originated from Cirque.
 - `pmw3360`: A copy of <https://grabcad.com/library/pmw3360dm-mouse-sensor-1>. Used for PMW3610 as well
