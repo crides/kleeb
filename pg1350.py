@@ -20,10 +20,13 @@ text = lambda y: [
     Text(type='value', text=name, at=[0, y + 7], layer='F.Fab'),
 ]
 
-core = lambda y: text(y) + rounded_rect(0, y, 15, 15, 1, 'Cmts.User') \
+def core(y, both=False):
+    top_hole = Rect(start=(2.5, y - 6.25), end=(-2.5, y - 3.15), layer='Dwgs.User')
+    l = text(y) + rounded_rect(0, y, 15, 15, 1, 'Cmts.User') \
         + rounded_rect(0, y, 13.8, 13.8, 1, 'Cmts.User') \
         + [npth(0, y, 3.4), npth(-5.5, y, 1.7), npth(5.5, y, 1.7),
            Rect(start=(2.5, y + 6.25), end=(-2.5, y + 3.15), layer='Dwgs.User')]
+    return (l + [top_hole]) if both else l
 
 cap_variants = lambda y: [
     ("", (0, y, 18, 17)),
@@ -110,3 +113,8 @@ for diode in [False, True]:
                 footprint("pg1350", name, diode, core(off) + pins(off, rev, diode, hotswap)
                                 + cap_outline(outline)
                                 + (diode_pads(rev, hotswap) if diode else []))
+                if not diode and hotswap:
+                    name = "pg1350-" + ("R" if rev else "") + "B" + cap
+                    normal_pads, hotswap_pads = pins(0, rev, False, False), pins(0, rev, False, True)
+                    pads = normal_pads + [p.rotate(180) for p in hotswap_pads]
+                    footprint("pg1350", name, False, core(0, both=True) + pads + cap_outline(outline))
