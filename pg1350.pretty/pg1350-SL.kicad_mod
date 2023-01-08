@@ -1,4 +1,4 @@
-(module pg1350-SL (layer F.Cu) (tedit 63B92BFF)
+(module pg1350-SL (layer F.Cu) (tedit 63BA167A)
   (fp_text reference REF** (at 0 0) (layer F.Fab) hide
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -33,9 +33,9 @@
   (fp_line (start 7.5 -6.5) (end 7.5 6.5) (layer Dwgs.User) (width 0.15))
   (fp_line (start 6.5 7.5) (end -8 7.5) (layer Dwgs.User) (width 0.15))
   (fp_line (start -9 6.5) (end -9 -6.5) (layer Dwgs.User) (width 0.15))
-  (pad "" np_thru_hole circle (at 0 0) (size 3.4 3.4) (drill 3.4) (layers *.Cu *.Mask))
-  (pad "" np_thru_hole circle (at -5.5 0) (size 1.7 1.7) (drill 1.7) (layers *.Cu *.Mask))
-  (pad "" np_thru_hole circle (at 5.5 0) (size 1.7 1.7) (drill 1.7) (layers *.Cu *.Mask))
+  (pad "" np_thru_hole circle (at 0 0) (size 3.4 3.4) (drill 3.4) (layers *.Mask))
+  (pad "" np_thru_hole circle (at -5.5 0) (size 1.7 1.7) (drill 1.7) (layers *.Mask))
+  (pad "" np_thru_hole circle (at 5.5 0) (size 1.7 1.7) (drill 1.7) (layers *.Mask))
   (pad 1 thru_hole circle (at 0 -5.9) (size 2 2) (drill 1.2) (layers *.Cu B.Mask))
   (pad 2 thru_hole circle (at 5 -3.8) (size 2 2) (drill 1.2) (layers *.Cu B.Mask))
 )

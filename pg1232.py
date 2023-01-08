@@ -8,9 +8,6 @@ pin_size = (1.6, 1.1)
 top_pos = lambda y: (2, y + 5.4)
 side_pos = lambda y: (-4.58, y + 5.1)
 stab_pos = lambda y: (5.3, y - 4.75)
-def x_mir(p):
-    return (-p[0], p[1])
-
 text = lambda y: [
     Text(type='reference', text='REF**', at=[0, 0], layer='F.Fab', hide=True),
     Text(type='value', text=name, at=[0, y + 9], layer='F.Fab'),
