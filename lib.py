@@ -50,9 +50,17 @@ def cap_outline(outline, shrink=0):
 def npth(x, y, r):
     return Pad(type=Pad.TYPE_NPTH, shape=Pad.SHAPE_CIRCLE, at=(x, y), size=(r, r), drill=r, layers=Pad.LAYERS_NPTH)
 
-def pth(x, y, p, r, layers, n=None):
-    attrs = {"number": n} if n != None else {}
-    return Pad(type=Pad.TYPE_THT, shape=Pad.SHAPE_CIRCLE, at=(x, y), size=(p, p), drill=r, layers=layers, **attrs)
+def pth(n, x, y, p, r, layers):
+    return Pad(number=n, type=Pad.TYPE_THT, shape=Pad.SHAPE_CIRCLE, at=(x, y), size=(p, p), drill=r, layers=layers)
 
 def x_mir(p):
     return (-p[0], p[1])
+
+def lines(pts: list[tuple[float, float]], width: float | None = None, layer=None) -> list:
+    layer = {"layer": layer} if layer != None else {}
+    width = {"width": width} if width != None else {}
+    return [Line(start=pts[i], end=pts[i + 1], **width, **layer) for i in range(len(pts) - 1)]
+
+def line_pad(n, pts: list[tuple[float, float]], pos: tuple[float, float], layers, width):
+    return Pad(number=n, type=Pad.TYPE_SMT, shape=Pad.SHAPE_CUSTOM, at=pos, size=(width, width),
+               primitives=lines(pts, width=width), layers=layers)

@@ -20,8 +20,8 @@ mid_hole_param = {
 }
 
 core = lambda y: text(y) \
-        + [RectLine(start=(6.75, y + 6.25), end=(-6.75, y - 6.25), layer='Cmts.User'),
-           RectLine(start=(2.8, y - 3.25), end=(-2.8, y - 5.45), layer='Dwgs.User'),
+        + [Rect(start=(6.75, y + 6.25), end=(-6.75, y - 6.25), layer='Cmts.User'),
+           Rect(start=(2.8, y - 3.25), end=(-2.8, y - 5.45), layer='Dwgs.User'),
            Pad(at=(-5.7, y), rotation=90, size=(5.8, 0.3), drill=(5.8, 0.3), **mid_hole_param),
            Pad(at=(4.85, y), size=(2, 5.8), drill=(2, 5.8), **mid_hole_param),
            Pad(at=(0, y + 3.3), size=(4.5, 1), drill=(4.5, 1), **mid_hole_param),
@@ -52,22 +52,21 @@ cap_variants = lambda y: [
 trace_width = 0.254     # mm
 
 def pins(y: float, rev: bool, diode: bool, hotswap: bool):
-    def oval(pos, layers, n=None):
-        attrs = {"number": n} if n != None else {}
-        return Pad(type=Pad.TYPE_THT, shape=Pad.SHAPE_OVAL, at=pos, size=(2, 1.5), drill=(1, 0.5), layers=layers, **attrs)
-    def oval_vert(pos, layers, n=None):
-        pad = oval(pos, layers, n)
+    def oval(n, pos, layers):
+        return Pad(number=n, type=Pad.TYPE_THT, shape=Pad.SHAPE_OVAL, at=pos, size=(2, 1.5), drill=(1, 0.5), layers=layers)
+    def oval_vert(n, pos, layers):
+        pad = oval(n, pos, layers)
         pad.rotation = 90
         return pad
-    def circle(pos: Tuple[float, float], layers, n=None):
-        return pth(*pos, *pin_size, layers, n)
+    def circle(n, pos: Tuple[float, float], layers):
+        return pth(n, *pos, *pin_size, layers)
     vert = oval_vert if hotswap else circle
     horiz = oval if hotswap else circle
-    side_pin_num = None if diode else 2
-    normal = [horiz(top_pos(y), LAYERS_BTHT, n=1), vert(side_pos(y), LAYERS_BTHT, n=side_pin_num)]
-    reved = [horiz(x_mir(top_pos(y)), LAYERS_FTHT, n=1), vert(x_mir(side_pos(y)), LAYERS_FTHT, n=side_pin_num)]
+    side_pin_num = 3 if diode else 2
+    normal = [horiz(1, top_pos(y), LAYERS_BTHT), vert(side_pin_num, side_pos(y), LAYERS_BTHT)]
+    reved = [horiz(1, x_mir(top_pos(y)), LAYERS_FTHT), vert(side_pin_num, x_mir(side_pos(y)), LAYERS_FTHT)]
     stab_layer = LAYERS_THT if rev else LAYERS_BTHT
-    stabs = [vert(stab_pos(y), stab_layer), vert(x_mir(stab_pos(y)), stab_layer)]
+    stabs = [vert(4, stab_pos(y), stab_layer), vert(5, x_mir(stab_pos(y)), stab_layer)]
     return normal + (reved if rev else []) + stabs
 
 diode_off = 4.35
@@ -78,23 +77,12 @@ def diode_pads(rev):
     left_pad = (-1.65, 0)
     pad_size = (0.9, 1.2)
     core = [
-        Pad(type=Pad.TYPE_SMT, shape=Pad.SHAPE_CUSTOM, at=left_pad, size=(trace_width, trace_width),
-            primitives=[Line(start=(-4.75, 7.63), end=(-2.93, 9.45), width=trace_width),
-                        Line(start=(0, 0), end=(-1.3, 0), width=trace_width),
-                        Line(start=(-1.3, 0), end=(-2.25, 0.95), width=trace_width),
-                        Line(start=(-4.75, 1.25), end=(-4.75, 7.63), width=trace_width),
-                        Line(start=(-2.25, 0.95), end=(-4.45, 0.95), width=trace_width),
-                        Line(start=(-4.45, 0.95), end=(-4.75, 1.25), width=trace_width)],
-            layers=['F.Cu']),
-        RectLine(start=(1.4, 0.9), end=(-1.4, -0.9), layer='F.Fab', width=0.12),
+        line_pad(3, [(0, 0), (-1.3, 0), (-2.25, 0.95), (-4.45, 0.95), (-4.75, 1.25), (-4.75, 7.63), (-2.93, 9.45)], left_pad, ['F.Cu'], trace_width),
+        Rect(start=(1.4, 0.9), end=(-1.4, -0.9), layer='F.Fab', width=0.12),
     ]
-    silk = lambda layer: [
-        Line(start=(2.25, -1), end=(2.25, 1), layer=layer),
-        Line(start=(2.25, 1), end=(-1.65, 1), layer=layer),
-        Line(start=(2.25, -1), end=(-1.65, -1), layer=layer),
-    ]
+    silk = lambda layer: lines([(1.65, -1), (-2.25, -1), (-2.25, 1), (1.65, 1)], layer=layer)
     pads = [
-        Pad(type=typ, shape=Pad.SHAPE_RECT, at=left_pad, size=pad_size, drill=drill, layers=layers),
+        Pad(number=3, type=typ, shape=Pad.SHAPE_RECT, at=left_pad, size=pad_size, drill=drill, layers=layers),
         Pad(number=2, type=typ, shape=Pad.SHAPE_RECT, at=x_mir(left_pad), size=pad_size, drill=drill, layers=layers),
     ]
     return core + pads + silk('F.SilkS') + (silk('B.SilkS') if rev else [])

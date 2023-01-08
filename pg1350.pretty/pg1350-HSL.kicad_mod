@@ -1,4 +1,4 @@
-(module pg1350-HSL (layer F.Cu) (tedit 63BA167A)
+(module pg1350-HSL (layer F.Cu) (tedit 63BA4AA2)
   (fp_text reference REF** (at 0 0) (layer F.Fab) hide
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -25,10 +25,6 @@
   (fp_line (start 6.9 -5.9) (end 6.9 5.9) (layer Cmts.User) (width 0.15))
   (fp_line (start 5.9 6.9) (end -5.9 6.9) (layer Cmts.User) (width 0.15))
   (fp_line (start -6.9 5.9) (end -6.9 -5.9) (layer Cmts.User) (width 0.15))
-  (fp_line (start 2.5 6.25) (end 2.5 3.15) (layer Dwgs.User) (width 0.15))
-  (fp_line (start 2.5 3.15) (end -2.5 3.15) (layer Dwgs.User) (width 0.15))
-  (fp_line (start -2.5 3.15) (end -2.5 6.25) (layer Dwgs.User) (width 0.15))
-  (fp_line (start -2.5 6.25) (end 2.5 6.25) (layer Dwgs.User) (width 0.15))
   (fp_line (start -8 -7.5) (end 6.5 -7.5) (layer Dwgs.User) (width 0.15))
   (fp_line (start 7.5 -6.5) (end 7.5 6.5) (layer Dwgs.User) (width 0.15))
   (fp_line (start 6.5 7.5) (end -8 7.5) (layer Dwgs.User) (width 0.15))
@@ -40,4 +36,5 @@
   (pad "" np_thru_hole circle (at 5 -3.8) (size 3 3) (drill 3) (layers *.Mask))
   (pad 1 smd rect (at -3.575 -5.9) (size 2.6 2.6) (layers B.Cu B.Mask))
   (pad 2 smd rect (at 8.575 -3.8) (size 2.6 2.6) (layers B.Cu B.Mask))
+  (fp_rect (start 2.5 6.25) (end -2.5 3.15) (layer Dwgs.User) (width 0.15) (fill none))
 )

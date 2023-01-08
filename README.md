@@ -2,6 +2,8 @@
 
 This is a collection of the Kicad symbols, footprints and 3D models useful in keyboard creation other than normal mechanical switches and the ones included in Kicad's standard library, all in 6.0 format. I didn't create all of them, and some come from either other people on Discord, or from other online resources that isn't in a Git tree. Putting them in a centralized place means it's easier for people to use, distribute*, and compare, and changes can be made in a clearer way. I'll try to list the sources down below, but due to the nature of the sources they maybe incorrect/missing. If you have a problem with how I'm using/distributing them please let me know.
 
+Some of the symbols and/or footprints included here may be untested. If you have made a board with those, whether successful or unsuccessful (hopefully the former), please let me know either privately or through issues/PRs. Thanks!
+
 ## License
 
 Those directly created by me is licensed under MIT. Those came from Discord are technically in a grey zone, as they are shared without a (explicit) license. For those that came from other sources, the original license should be used. I do not intend to claim ownership over them, and they are here so they can be easily included in future projects.
@@ -117,7 +119,7 @@ The outline on `User.Comments` is the outline of the side tabs, and the one on `
 All of the footprints are auto generated now. Different letters signify different variations.
 - `D`: includes diode in the footprint. It uses choc LED hole for (optional) SOD-123 diode placement, and the internal connections are already made. The center of the footprint is placed on the center of the diode to help with PCBA, and it's meant to be used with the custom symbol signifying that it has a builtin diode; 
 - `R`: footprint is reversible. Througholes are included for both sides, another pad is used to connect the duplicated hole, and vias are used inside of the diode pads to connect the diodes on both sides, and silkscreens are duplicated on both sides;
-- `H`: Hotswap footprint. Currently only supports pg1232 choc minis, using the PCB itself as the socket. Pad shape and idea borrowed from [@davidphilipbarr](https://github.com/davidphilipbarr). ___Untested!___
+- `H`: Hotswap footprint. Currently only supports pg1350 choc and pg1232 choc minis, using the PCB itself as the socket. Pad shape and idea borrowed from [@davidphilipbarr](https://github.com/davidphilipbarr). ___Untested!___
 
 All the following variants are spacing variants, which is useless for most people and I keep it here for my own sake.
 
