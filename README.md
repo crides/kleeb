@@ -13,7 +13,6 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 ### `ic`
 
 - `MCP23S08`: From [@petejohanson](https://github.com/petejohanson), converted to 6.0. 8-bit SPI bidirectional I/O expander, missing from Kicad libray
-- `MT25QL128ABA1ESE`: created by me. 128Mib/16MiB QSPI NOR flash
 - `CMM4030D`: I2S microphone
 - `TMP117`: I2C high accuracy temperature sensor
 - `IS31FL3729`: 16x8 or 15x9 I2C LED matrix driver
