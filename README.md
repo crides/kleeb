@@ -146,3 +146,4 @@ All the following variants are spacing variants, which is useless for most peopl
 - `EVQWGD001`: A copy of <https://grabcad.com/library/panasonic-evqwgd001-encoder-1#!>. Doesn't seem to match footprint
 - `TM035035`: From [@freznel](https://github.com/freznel10) on Discord, originated from Cirque.
 - `pmw3360`: A copy of <https://grabcad.com/library/pmw3360dm-mouse-sensor-1>. Used for PMW3610 as well
+- `EC10E`: From [Mouser](https://www.mouser.com/ProductDetail/Alps-Alpine/EC10E1220503?qs=6EGMNY9ZYDR3V6AJfd9I6g%3D%3D).
