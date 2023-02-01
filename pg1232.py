@@ -98,4 +98,4 @@ for diode in [False, True]:
                 footprint("pg1232", name, diode, core(off) + pins(off, rev, diode, hotswap)
                                 + cap_outline(outline)
                                 + (diode_pads(rev) if diode else [])
-                                + [Model(filename=model_path, at=(0, (-diode_off / 2.54 if diode else 0), 0))])
+                                + [Model(filename=model_path, at=(0, (-diode_off / 25.4 if diode else 0), 0))])
