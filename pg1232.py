@@ -80,7 +80,7 @@ def diode_pads(rev):
         line_pad(3, [(0, 0), (-1.3, 0), (-2.25, 0.95), (-4.45, 0.95), (-4.75, 1.25), (-4.75, 7.63), (-2.93, 9.45)], left_pad, ['F.Cu'], trace_width),
         Rect(start=(1.4, 0.9), end=(-1.4, -0.9), layer='F.Fab', width=0.12),
     ]
-    silk = lambda layer: lines([(1.65, -1), (-2.25, -1), (-2.25, 1), (1.65, 1)], layer=layer)
+    silk = lambda layer: lines([(-1.65, -1), (2.25, -1), (2.25, 1), (-1.65, 1)], layer=layer)
     pads = [
         Pad(number=3, type=typ, shape=Pad.SHAPE_RECT, at=left_pad, size=pad_size, drill=drill, layers=layers),
         Pad(number=2, type=typ, shape=Pad.SHAPE_RECT, at=x_mir(left_pad), size=pad_size, drill=drill, layers=layers),

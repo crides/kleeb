@@ -1,4 +1,4 @@
-(module pg1232-DSSN (layer F.Cu) (tedit 63D9DD56)
+(module pg1232-DSSN (layer F.Cu) (tedit 63F5B100)
   (attr smd)
   (fp_text reference REF** (at 0 0) (layer F.Fab) hide
     (effects (font (size 1 1) (thickness 0.15)))
@@ -14,9 +14,9 @@
   (fp_line (start 7.25 -1.4) (end 7.25 10.1) (layer Dwgs.User) (width 0.15))
   (fp_line (start 6.25 11.1) (end -6.25 11.1) (layer Dwgs.User) (width 0.15))
   (fp_line (start -7.25 10.1) (end -7.25 -1.4) (layer Dwgs.User) (width 0.15))
-  (fp_line (start 1.65 -1) (end -2.25 -1) (layer F.SilkS) (width 0.12))
-  (fp_line (start -2.25 -1) (end -2.25 1) (layer F.SilkS) (width 0.12))
-  (fp_line (start -2.25 1) (end 1.65 1) (layer F.SilkS) (width 0.12))
+  (fp_line (start -1.65 -1) (end 2.25 -1) (layer F.SilkS) (width 0.12))
+  (fp_line (start 2.25 -1) (end 2.25 1) (layer F.SilkS) (width 0.12))
+  (fp_line (start 2.25 1) (end -1.65 1) (layer F.SilkS) (width 0.12))
   (pad "" np_thru_hole oval (at -5.7 4.35 90) (size 5.8 0.3) (drill oval 5.8 0.3) (layers *.Mask))
   (pad "" np_thru_hole oval (at 4.85 4.35) (size 2 5.8) (drill oval 2 5.8) (layers *.Mask))
   (pad "" np_thru_hole oval (at 0 7.65) (size 4.5 1) (drill oval 4.5 1) (layers *.Mask))
