@@ -16,6 +16,7 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 - `CMM4030D`: I2S microphone
 - `TMP117`: I2C high accuracy temperature sensor
 - `IS31FL3729`: 16x8 or 15x9 I2C LED matrix driver
+- `IS31FL3741`: 39x9 I2C LED matrix driver
 - `MAX98357A`: I2S DAC amplifier
 
 ### `display`
@@ -32,6 +33,7 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 ### `ic`
 
 - `CMM4030D`, `eTQFP-32_7x7mm_P0.8mm`: created by me from datasheet
+- `QFN-60-1EP_7x7mm_P0.4mm_EP5.4x5.4mm`: created by me from datasheet, for IS31FL3741; thermal pad patterns copied from kicad builtin footprints
 
 ### `switch`
 
