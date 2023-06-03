@@ -1,4 +1,4 @@
-(module pg1350-DHSL (layer F.Cu) (tedit 63BA60C4)
+(module pg1350-DHSL (layer F.Cu) (tedit 647BD6E4)
   (attr smd)
   (fp_text reference REF** (at 0 0) (layer F.Fab) hide
     (effects (font (size 1 1) (thickness 0.15)))
@@ -48,8 +48,8 @@
       (gr_line (start 4.5 -4.5) (end 4.5 -8.3) (width 0.254))
     ))
   (pad 3 thru_hole circle (at 3 0) (size 0.8 0.8) (drill 0.4) (layers *.Cu))
-  (pad 2 smd rect (at -1.65 0) (size 0.9 1.2) (layers F.Cu F.Mask F.Paste))
-  (pad 3 smd rect (at 1.65 0) (size 0.9 1.2) (layers F.Cu F.Mask F.Paste))
+  (pad 2 smd rect (at -1.65 0) (size 0.9 1.2) (layers *.Cu *.Mask *.Paste))
+  (pad 3 smd rect (at 1.65 0) (size 0.9 1.2) (layers *.Cu *.Mask *.Paste))
   (fp_rect (start 2.5 1.75) (end -2.5 -1.35) (layer Dwgs.User) (width 0.15) (fill none))
   (fp_rect (start 1.4 0.9) (end -1.4 -0.9) (layer F.Fab) (width 0.12) (fill none))
 )
