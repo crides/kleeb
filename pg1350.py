@@ -16,17 +16,16 @@ def hs_side_pos(y):
     side = side_pos(y)
     return side[0] + hs_dx, side[1]
 
-text = lambda y: [
-    Text(type='reference', text='REF**', at=[0, 0], layer='F.Fab', hide=True),
-    Text(type='value', text=name, at=[0, y + 7], layer='F.Fab'),
-]
-
-def core(y, both=False):
+def core(y: float, compact: bool, both: bool):
     top_hole = Rect(start=(2.5, y - 6.25), end=(-2.5, y - 3.15), layer='Dwgs.User')
-    l = text(y) + rounded_rect(0, y, 15, 15, 1, 'Cmts.User') \
-        + rounded_rect(0, y, 13.8, 13.8, 1, 'Cmts.User') \
+    l = [
+        Text(type='reference', text='REF**', at=[0, 0], layer='F.Fab', hide=True),
+        Text(type='value', text=name, at=[0, y + 7], layer='F.Fab'),
+    ] + rounded_rect(0, y, 13.8, 13.8, 1, 'Cmts.User') \
         + [npth(0, y, 3.4), npth(-5.5, y, 1.7), npth(5.5, y, 1.7),
            Rect(start=(2.5, y + 6.25), end=(-2.5, y + 3.15), layer='Dwgs.User')]
+    if not compact:
+        l += rounded_rect(0, y, 15, 15, 1, 'Cmts.User')
     return (l + [top_hole]) if both else l
 
 cap_variants = lambda y: [
@@ -35,6 +34,10 @@ cap_variants = lambda y: [
     ("SN", (0, y, 15, 15)),
     ("SL", (-0.75, y, 16.5, 15)),
     ("SR", (0.75, y, 16.5, 15)),
+    ("C", (0, y, 18, 14)),
+    ("CN", (0, y, 15, 14)),
+    ("CL", (-0.75, y, 16.5, 14)),
+    ("CR", (0.75, y, 16.5, 14)),
 ]
 
 trace_width = 0.254     # mm
@@ -141,11 +144,12 @@ for diode in [False, True]:
                 var = ("D" if diode else "") + rev_marker + ("H" if hotswap else "") + cap
                 name = "pg1350" + ("-" + var if var else var)
                 reverse = rev != DiodeRevVariants.NONE
-                footprint("pg1350", name, diode, core(off) + pins(off, reverse, diode, hotswap)
+                compact = "C" in var
+                footprint("pg1350", name, diode, core(off, compact, False) + pins(off, reverse, diode, hotswap)
                                 + cap_outline(outline)
                                 + (diode_pads(rev, hotswap) if diode else []))
                 if not diode and hotswap:
                     name = "pg1350-" + ("R" if reverse else "") + "B" + cap
                     normal_pads, hotswap_pads = pins(0, reverse, False, False), pins(0, reverse, False, True)
                     pads = normal_pads + [p.rotate(180) for p in hotswap_pads]
-                    footprint("pg1350", name, False, core(0, both=True) + pads + cap_outline(outline))
+                    footprint("pg1350", name, False, core(0, compact, True) + pads + cap_outline(outline))
