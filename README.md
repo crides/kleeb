@@ -48,6 +48,7 @@ Those directly created by me is licensed under MIT. Those came from Discord are 
 - `xiao-ble`: Same as above. The [Xiao BLE controller](https://www.seeedstudio.com/Seeed-XIAO-BLE-nRF52840-p-5201.html) from Seeed Studio.
 - `rp2040-zero`: created by me. The [RP2040 Zero controller](https://www.waveshare.com/rp2040-zero.htm) by WaveShare.
 - `ms88sf3-nrf52840`, `ms88sf3-nrf52840-split`: From [@Kurtis](https://github.com/kurtis-lew) on Discord, who used a split symbol. I merged the ground pins and merged the units for the symbols, and corrected the footprint according to the datasheet, also making the keepout 5mm wide.
+- `e73-2g4m08s1c`, `e73-2g4m08s1c-no-underside`: [fetched from SnapEDA)[https://www.snapeda.com/parts/E73-2G4M08S1C/EBYTE/view-part/], but modified by me, in the same style of the `holyiot-18010` footprints, and with the pad sizes slightly shrunken. [E73-2G4M08S1C nRF52840 BLE module](https://jlcpcb.com/partdetail/Chengdu_Ebyte_ElecTech-E732G4M08S1C/C356849)
 
 ### `sensor`
 
