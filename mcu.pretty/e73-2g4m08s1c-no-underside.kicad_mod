@@ -39,10 +39,10 @@
   (pad "39" smd rect (at 6.3 -2.49) (size 1.6 0.9) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp d8d8f086-d849-4551-96a9-c917f6643e96))
   (pad "41" smd rect (at 6.3 -3.76) (size 1.6 0.9) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp fae199e9-6c78-4950-9313-0bc5658e7f53))
   (pad "43" smd rect (at 6.3 -5.03) (size 1.6 0.9) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 60f32515-d8d6-4858-87ac-447f38b532c0))
-  (zone (net 0) (net_name "") (layers "*.Cu") (tstamp c63f9d1a-efa1-4bc4-8efe-dd840dfec865) (hatch full 0.508)
+  (zone (net 0) (net_name "") (layers "*.Cu") (tstamp c8712960-3a37-428c-9922-86fd1d5a260a) (hatch full 0.508)
     (connect_pads (clearance 0))
     (min_thickness 0.01) (filled_areas_thickness no)
-    (keepout (tracks allowed) (vias not_allowed) (pads allowed) (copperpour allowed) (footprints allowed))
+    (keepout (tracks not_allowed) (vias not_allowed) (pads not_allowed) (copperpour not_allowed) (footprints allowed))
     (fill (thermal_gap 0.508) (thermal_bridge_width 0.508))
     (polygon
       (pts
